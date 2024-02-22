@@ -12,7 +12,7 @@ def f1(y, z2):
     return z2-(2*eps*y)/T
 
 def f2(y):
-    return (k/(T*T))*g - (1/T*T)*y
+    return (k/(T*T))*g - (1/(T*T))*y
 
 y=0
 z2=0
@@ -23,7 +23,6 @@ X = list()
 W = list()
 H = list()
 one = list()
-ypr = 0
 w = 0
 while t < L:
     X.append(t)
@@ -39,15 +38,13 @@ while t < L:
     k4 = dt*f1(y+k3,z2+q3)
     q4 = dt*f2(y+k3)
     z2 = z2 + (q1+2*q2+2*q3+q4)/6
-    ypr = y
     y = y + (k1+2*k2+2*k3+k4)/6
     if t > 0:
-        w = (ypr - y)/dt
+        w = (H[len(H)-1] - y)/dt
     t+=dt
-#pyplot.bar(X, H, label = "Переходная функция",alpha = 0.5)
-#pyplot.bar(X, W, label="Весовая функция", alpha = 0.5)
-#pyplot.bar(X, one, label = "Единичное ступенчатое воздействие", alpha = 0.5)
-pyplot.plot(X, H, color="orange")
-pyplot.plot(X, W, color="blue")
-pyplot.plot(X, one)
+pyplot.plot(X, H, color="orange", label = "Переходная функция")
+pyplot.plot(X, W, color="blue", label="Весовая функция")
+pyplot.plot(X, one, label = "Единичное ступенчатое воздействие")
+pyplot.grid(True)
+pyplot.legend()
 pyplot.show()
