@@ -3,21 +3,21 @@ import matplotlib.pyplot as pyplot
 import matplotlib as matplotlib
 import numpy as numpy
 
-T = 10
-eps = 0.2
-k = 1
+T1 = 0.1
+T2 = 0.02
+k = 0.1
 g = 1
 
 def f1(y, z2):
-    return z2-(2*eps*y)/T
+    return z2 - (T1/(T2*T2))*y
 
 def f2(y):
-    return (k/(T*T))*g - (1/(T*T))*y
+    return (k/(T2*T2))*g -(1/(T2*T2))*y
 
 y=0
 z2=0
-dt = T/100
-L = (6*numpy.pi*T)/numpy.sqrt(1+eps*eps)
+dt = T2/100
+L = 4*T1
 t = 0
 X = list()
 W = list()
