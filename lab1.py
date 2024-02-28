@@ -39,8 +39,7 @@ while t < L:
     q4 = dt*f2(y+k3)
     z2 = z2 + (q1+2*q2+2*q3+q4)/6
     y = y + (k1+2*k2+2*k3+k4)/6
-    if t > 0:
-        w = (H[len(H)-1] - y)/dt
+    w = (H[len(H)-1] - y)/dt
     t+=dt
 pyplot.plot(X, H, color="orange", label = "Переходная функция")
 pyplot.plot(X, W, color="blue", label="Весовая функция")
