@@ -32,10 +32,10 @@ b = sqrt(6)/25
 w = 0
 while t < L:
     X.append(t)
-    HA.append(k+exp(-a*t)*((-k*(a/b))*sin(b*t)-k*cos(b*t)))
+    HA.append(k+exp(-a*t)*(k*(-a/b)*sin(b*t)-k*cos(b*t)))
     HO.append(k-(k*sin(b*t)+2*sqrt(6)*k*cos(b*t))/(2*sqrt(6)*exp(a*t)))
     WO.append((k*exp(-a*t)*sin(b*t))/(4*sqrt(6)))
-    WA.append((exp(-a*t)/(100*sqrt(6)))*((24*k-1)*sin(b*t)+ 2*sqrt(6)*(k+1)*cos(b*t)))
+    WA.append(k*exp(-a*t)*sin(b*t)*(b+((a*a)/b)))
     W.append(w)
     H.append(y)
     one.append(1)
