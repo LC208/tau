@@ -53,11 +53,11 @@ while t < L:
     t+=dt
 pyplot.plot(X, H, color="blue", linewidth = 6, label = "Переходная функция")
 pyplot.plot(X, W, color="blue", linewidth = 6,label="Весовая функция")
-pyplot.plot(X, one, label = "Единичное ступенчатое воздействие")
+pyplot.plot(X, one, label = "Единичное ступенчатое воздействие", color = "green")
 pyplot.plot(X,HA, label = "Аналитически расчитанная переходная функция", linestyle="dashed", color = "black", linewidth = 4)
 pyplot.plot(X,WA, label = "Аналитически расчитанная весовая функция",linestyle="dashed", color = "black", linewidth = 4)
 pyplot.plot(X,WO, label = "Операторная весовая функция", linestyle="dashed", color = "red")
 pyplot.plot(X,HO, label = "Операторная переходная функция", linestyle="dashed", color = "red")
 pyplot.grid(True)
-pyplot.legend()
+# pyplot.legend()
 pyplot.show()
