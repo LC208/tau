@@ -51,8 +51,8 @@ while t < L:
     y = y + (k1+2*k2+2*k3+k4)/6
     w = (y - H[len(H)-1])/dt
     t+=dt
-pyplot.plot(X, H, color="blue", label = "Переходная функция")
-pyplot.plot(X, W, color="blue", label="Весовая функция")
+pyplot.plot(X, H, color="blue", linewidth = 6, label = "Переходная функция")
+pyplot.plot(X, W, color="blue", linewidth = 6,label="Весовая функция")
 pyplot.plot(X, one, label = "Единичное ступенчатое воздействие")
 pyplot.plot(X,HA, label = "Аналитически расчитанная переходная функция", linestyle="dashed", color = "black", linewidth = 4)
 pyplot.plot(X,WA, label = "Аналитически расчитанная весовая функция",linestyle="dashed", color = "black", linewidth = 4)
