@@ -1,7 +1,7 @@
 import matplotlib.pyplot as pyplot
 
 import matplotlib as matplotlib
-import numpy as numpy
+from numpy import sin,exp,sqrt,cos, pi
 
 T = 10
 eps = 0.2
@@ -17,7 +17,7 @@ def f2(y):
 y=0
 z2=0
 dt = T/100
-L = (6*numpy.pi*T)/numpy.sqrt(1+eps*eps)
+L = (6*pi*T)/sqrt(1+eps*eps)
 t = 0
 X = list()
 W = list()
@@ -28,14 +28,14 @@ WA = list()
 H = list()
 one = list()
 a = 1/50
-b = numpy.sqrt(6)/25
+b = sqrt(6)/25
 w = 0
 while t < L:
     X.append(t)
-    HA.append(k+numpy.exp(-a*t)*((-k*(a/b))*numpy.sin(b*t)-k*numpy.cos(b*t)))
-    HO.append(k-(k*numpy.sin(b*t)+2*numpy.sqrt(6)*k*numpy.cos(b*t))/(2*numpy.sqrt(6)*numpy.exp(a*t)))
-    WO.append((k*numpy.exp(-a*t)*numpy.sin(b*t))/(4*numpy.sqrt(6)))
-    WA.append((numpy.exp(-a*t)/(100*numpy.sqrt(6)))*((24*k-1)*numpy.sin(b*t)+ 2*numpy.sqrt(6)*(k+1)*numpy.cos(b*t)))
+    HA.append(k+exp(-a*t)*((-k*(a/b))*sin(b*t)-k*cos(b*t)))
+    HO.append(k-(k*sin(b*t)+2*sqrt(6)*k*cos(b*t))/(2*sqrt(6)*exp(a*t)))
+    WO.append((k*exp(-a*t)*sin(b*t))/(4*sqrt(6)))
+    WA.append((exp(-a*t)/(100*sqrt(6)))*((24*k-1)*sin(b*t)+ 2*sqrt(6)*(k+1)*cos(b*t)))
     W.append(w)
     H.append(y)
     one.append(1)
